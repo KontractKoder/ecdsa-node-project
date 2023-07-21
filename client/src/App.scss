@@ -58,7 +58,7 @@ input {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
-  font-size: .9em;
+  font-size: 1.3em;
   &:hover {
     cursor: pointer;
   }
@@ -83,4 +83,8 @@ input {
 .transfer {
   display: flex;
   flex-direction: column;
+}
+
+.isVerified {
+  color: red;
 }
