@@ -49,7 +49,7 @@ function Transfer({ address, setBalance, privateKey, isVerified, setIsVerified})
     } catch (e) {
       isVerified = false;
       setIsVerified(isVerified);
-      alert(e.response.data.message);
+      alert(e);
     }
   }  
 
