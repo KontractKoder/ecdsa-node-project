@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = 3042;
-const secp = require('ethereum-cryptography/secp256k1');
+const {secp256k1} = require("ethereum-cryptography/secp256k1");
 
 
 app.use(cors());
@@ -41,7 +41,7 @@ app.post("/send", (req, res) => {
   console.log('signature restored:', restoredSignature );
   
   // verify transaction
-  isVerified = secp.secp256k1.verify(restoredSignature, sendMessageHashed, sender);
+  isVerified = secp256k1.verify(restoredSignature, sendMessageHashed, sender);
   
   console.log('isVerified : ', isVerified);
   

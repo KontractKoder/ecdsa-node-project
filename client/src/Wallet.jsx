@@ -1,5 +1,5 @@
 import server from "./server";
-import * as secp from 'ethereum-cryptography/secp256k1';
+import {secp256k1} from 'ethereum-cryptography/secp256k1';
 import { toHex } from "ethereum-cryptography/utils";
 
 
@@ -13,7 +13,7 @@ function Wallet({ address, setAddress, balance, setBalance, privateKey, setPriva
       setPrivateKey(privateKey);
       console.log('private key hex: ',privateKey);    
       
-      let address = toHex(secp.secp256k1.getPublicKey(privateKey));
+      let address = toHex(secp256k1.getPublicKey(privateKey));
       setAddress(address);
       console.log('address hex: ',address);
 
@@ -28,7 +28,7 @@ function Wallet({ address, setAddress, balance, setBalance, privateKey, setPriva
         setBalance(0);
       }
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e);
     }
   }
   
